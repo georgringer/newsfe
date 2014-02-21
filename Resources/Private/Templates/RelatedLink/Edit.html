@@ -1,0 +1,19 @@
+<f:layout name="Default" />
+
+
+<f:section name="main">
+	<h1>Edit media</h1>
+
+	<f:flashMessages />
+
+	<f:render partial="FormErrors" arguments="{table:'link'}"/>
+
+	<f:form action="update" name="relatedLink" object="{relatedLink}" arguments="{news:news}" enctype="multipart/form-data" class="form-horizontal">
+		<f:render partial="RelatedLink/FormFields" arguments="{news:news,availablecategories:availablecategories}" />
+		<div class="form-actions">
+			<f:form.submit value="Save"  class="btn btn-primary" />
+		</div>
+	</f:form>
+
+	<f:link.action action="new" controller="Media" arguments="{news:news}">new media</f:link.action>
+</f:section>

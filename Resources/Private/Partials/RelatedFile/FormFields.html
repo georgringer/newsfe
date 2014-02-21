@@ -1,0 +1,33 @@
+{namespace newsfe=Tx_Newsfe_ViewHelpers}
+
+<fieldset>
+    <legend><f:translate key="form.relatedfile.legend" arguments="{0:news.title}" /></legend>
+    <div class="control-group">
+		<label class="control-label" for="relatedfile-title">
+			<newsfe:translate key="file.title" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="title" class="input-xlarge" id="relatedfile-title" errorClass="error" />
+			<p class="help-block"><f:translate key="file.title.help" /></p>
+		</div>
+    </div>
+    <div class="control-group">
+		<label class="control-label" for="relatedfile-description">
+			<newsfe:translate key="file.description" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="description" class="input-xlarge" id="relatedfile-description" errorClass="error" />
+			<p class="help-block"><f:translate key="file.description.help" /></p>
+		</div>
+    </div>
+
+    <div class="control-group">
+		<label class="control-label" for="relatedfile-file">
+			<newsfe:translate key="file.file" />
+		</label>
+		<div class="controls">
+			<f:form.upload property="file" class="input-xlarge" id="relatedfile-file" errorClass="error" />
+			<p class="help-block"><f:translate key="file.file.help" /></p>
+		</div>
+    </div>
+</fieldset>

@@ -1,0 +1,45 @@
+{namespace newsfe=Tx_Newsfe_ViewHelpers}
+
+<fieldset>
+    <legend><f:translate key="form.media.legend" arguments="{0:news.title}" /></legend>
+    <div class="control-group">
+		<label class="control-label" for="media-image">
+			<newsfe:translate key="media.media" />
+		</label>
+		<div class="controls">
+			<f:form.upload property="image" class="input-xlarge" id="media-image" errorClass="error" />
+			<p class="help-block"><f:translate key="media.media.help" /></p>
+		</div>
+    </div>
+
+    <div class="control-group">
+		<label class="control-label" for="media-caption">
+			<newsfe:translate key="media.caption" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="caption" class="input-xlarge" id="media-caption" errorClass="error" />
+			<p class="help-block"><f:translate key="media.caption.help" /></p>
+		</div>
+    </div>
+    <div class="control-group">
+		<label class="control-label" for="media-title">
+			Alt & title text
+		</label>
+		<div class="controls">
+			<f:form.textfield property="alt" class="input-medium" id="media-alt" errorClass="error" />
+			<f:form.textfield property="title" class="input-medium" id="media-title" errorClass="error" />
+			<p class="help-block"><f:translate key="media.alt_title.help" /></p>
+		</div>
+    </div>
+
+    <div class="control-group">
+		<label class="control-label" for="media-showinpreview">
+			<newsfe:translate key="media.showinpreview" />
+		</label>
+		<div class="controls">
+			<f:form.checkbox property="showinpreview" value="1" id="media-showinpreview" errorClass="error"/>
+			<p class="help-block"><f:translate key="media.showinpreview.help" /></p>
+		</div>
+    </div>
+
+</fieldset>

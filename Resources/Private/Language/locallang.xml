@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the News FE Edit extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="validation.header">Validation errors</label>
+			<label index="validation.property.header">Validation errors for property "%s"</label>
+
+
+			<label index="form.media.legend">Media element for "%s"</label>
+			<label index="media.media.help">Upload an image</label>
+			<label index="media.caption.help">The caption is shown below the image</label>
+			<label index="media.alt_title.help">Alt and title are helpful for SEO and blind ones..</label>
+			<label index="media.showinpreview.help">Check to show in list view</label>
+
+			<label index="form.relatedlink.legend">Link element for "%s"</label>
+			<label index="link.title.help">Title of a link element</label>
+			<label index="link.description.help">Optional description</label>
+			<label index="link.uri.help">Uri, can be a ID of a TYPO3 Page, a link</label>
+			<label index="link.uri.placeholder">http://www.example.org</label>
+
+			<label index="form.relatedfile.legend">File element for "%s"</label>
+			<label index="file.title.help">Title of a foöe element</label>
+			<label index="file.description.help">Optional description</label>
+			<label index="file.file.help">Reqired file</label>
+
+			<label index="form.news.legend_edit">Edit news</label>
+			<label index="news.title.help">Title of news article</label>
+			<label index="news.teaser.help">Introduction text, will be cropped automatically if too long</label>
+			<label index="news.author_email.help">Name &amp; Email address of the author</label>
+			<label index="news.email.placeholder">fo@example.com</label>
+			<label index="news.datetime.help">Add the date</label>
+			<label index="news.datetime.format">Format: dd.mm.yyyy</label>
+			<label index="news.archive.help">Add the archive date</label>
+			<label index="news.archive.format">Format: dd.mm.yyyy</label>
+			<label index="news.starendtime">Start &amp; end time</label>
+			<label index="news.starttime.help">Configure when a news item should be displayed</label>
+			<label index="news.starttime.format">Format: dd.mm.yyyy</label>
+			<label index="news.bodytext.help">Main content of the article</label>
+			<label index="news..help"></label>
+			<label index="news..help"></label>
+			<label index="news..help"></label>
+			<label index="news..help"></label>
+		</languageKey>
+	</data>
+</T3locallang>

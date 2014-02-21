@@ -1,0 +1,35 @@
+plugin.tx_newsfe.settings {
+	listDemand {
+		startingpoint = 289
+		recursive = 3
+	}
+
+	news {
+		categoryList = 2,3
+		pidForNewRecords = 0
+	}
+}
+plugin.tx_news.settings {
+	validation {
+		Tx_News_Domain_Model_News {
+			title = Tx_Extbase_Validation_Validator_NotEmptyValidator
+			authorEmail = Tx_Extbase_Validation_Validator_EmailAddressValidator
+			teaser {
+				1 = Tx_Extbase_Validation_Validator_IntegerValidator
+				2 = Tx_Extbase_Validation_Validator_NumberRangeValidator
+				2 {
+					minimum = 10
+					maximum = 12
+				}
+			}
+		}
+		Tx_News_Domain_Model_Media {
+			caption = Tx_Extbase_Validation_Validator_NotEmptyValidator
+			title = Tx_Extbase_Validation_Validator_NotEmptyValidator
+			alt = Tx_Extbase_Validation_Validator_NotEmptyValidator
+		}
+		Tx_News_Domain_Model_Link {
+			uri = Tx_Extbase_Validation_Validator_NotEmptyValidator
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+	<h1>New News</h1>
+
+	<f:flashMessages />
+
+	<f:render partial="FormErrors" arguments="{table:'news'}"/>
+
+	<f:form action="create"  name="newNews" object="{newNews}">
+		<f:render partial="News/FormFields" arguments="{availablecategories:availablecategories}"/>
+		
+		<f:form.submit value="Create new" />
+	</f:form>
+</f:section>

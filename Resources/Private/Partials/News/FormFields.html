@@ -1,0 +1,100 @@
+{namespace newsfe=Tx_Newsfe_ViewHelpers}
+
+<fieldset>
+    <legend><f:translate key="form.news.legend_edit" /></legend>
+
+	<!-- Title -->
+    <div class="control-group">
+		<label class="control-label" for="news-title">
+			<newsfe:translate key="news.title" default="Title" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="title" class="input-xlarge" id="news-title" errorClass="error" />
+			<p class="help-block"><f:translate key="news.title.help" /></p>
+		</div>
+    </div>
+
+	<!-- Teaser -->
+    <div class="control-group">
+		<label class="control-label" for="news-teaser">
+			<newsfe:translate key="news.teaser" default="Teaser" />
+		</label>
+		<div class="controls">
+			<f:form.textarea property="teaser" rows="3" cols="40" class="input-xlarge" id="news-teaser" errorClass="error" />
+			<p class="help-block"><f:translate key="news.teaser.help" /></p>
+		</div>
+    </div>
+
+	<!-- Author -->
+    <div class="control-group">
+		<label class="control-label" for="news-author">
+			<newsfe:translate key="news.author" default="Author" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="author" id="news-author" class="input-medium" errorClass="error" />
+			<f:form.textfield property="authorEmail" id="news-authorEmail" class="input-medium" errorClass="error" additionalAttributes="{placeholder:'{f:translate(key: \'news.email.placeholder\')}'}" />
+			<p class="help-block"><f:translate key="news.author_email.help" /></p>
+		</div>
+    </div>
+
+	<!-- Datetime -->
+    <div class="control-group">
+		<label class="control-label" for="news-datetime">
+			<newsfe:translate key="news.datetime" default="Datetitme" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="datetime" value="{news.datetime->f:format.date(format: 'd.m.Y')}" id="news-datetime" class="input-medium" errorClass="error" />
+			<span class="help-inline"><f:translate key="news.datetime.format" /></span>
+			<p class="help-block"><f:translate key="news.datetime.help" /></p>
+		</div>
+    </div>
+
+	<!-- Archive -->
+    <div class="control-group">
+		<label class="control-label" for="news-archive">
+			<newsfe:translate key="news.archive" default="archive" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="archive" value="{news.archive->f:format.date(format: 'd.m.Y')}" id="news-archive" class="input-medium" errorClass="error" />
+			<span class="help-inline"><f:translate key="news.archive.format" /></span>
+			<p class="help-block"><f:translate key="news.archive.help" /></p>
+		</div>
+    </div>
+
+	<!-- Start and end -->
+    <div class="control-group">
+		<label class="control-label" for="news-starttime">
+			<f:translate key="news.starendtime" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="starttime" value="{news.starttime->f:format.date(format: 'd.m.Y')}" id="news-starttime" class="input-medium" errorClass="error" />
+			<f:form.textfield property="endtime" value="{news.endtime->f:format.date(format: 'd.m.Y')}" id="news-endtime" class="input-medium" errorClass="error" />
+			<span class="help-inline"><f:translate key="news.starttime.format" /></span>
+			<p class="help-block"><f:translate key="news.starttime.help" /></p>
+		</div>
+    </div>
+
+	<!-- Bodytext -->
+	<div class="control-group">
+		<label class="control-label" for="news-bodytext">
+			<newsfe:translate key="news.bodytext" default="bodytext" />
+		</label>
+		<div class="controls">
+			<f:form.textarea property="bodytext" rows="3" cols="40" class="input-xlarge" id="news-bodytext" errorClass="error" />
+			<p class="help-block"><f:translate key="news.bodytext.help" /></p>
+		</div>
+    </div>
+
+	<!-- Categories -->
+	<div class="control-group">
+		<label class="control-label" for="news-categories">
+			<newsfe:translate key="news.categories" default="categories" />
+		</label>
+		<div class="controls">
+			<f:form.select property="categories" options="{availablecategories}" optionValueField="uid" optionLabelField="title" multiple="1" class="input-xlarge" id="news-bodytext" errorClass="error" />
+			<p class="help-block"><f:translate key="news.categories.help" /></p>
+		</div>
+    </div>
+
+
+</fieldset>

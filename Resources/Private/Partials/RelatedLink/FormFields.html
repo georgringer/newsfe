@@ -1,0 +1,32 @@
+{namespace newsfe=Tx_Newsfe_ViewHelpers}
+
+<fieldset>
+    <legend><f:translate key="form.relatedlink.legend" arguments="{0:news.title}" /></legend>
+    <div class="control-group">
+		<label class="control-label" for="relatedlink-uri">
+			<newsfe:translate key="link.uri" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="uri" class="input-xlarge" id="relatedlink-description" errorClass="error" additionalAttributes="{placeholder:'{f:translate(key: \'link.uri.placeholder\')}'}" />
+			<p class="help-block"><f:translate key="link.uri.help" /></p>
+		</div>
+    </div>
+    <div class="control-group">
+		<label class="control-label" for="relatedlink-title">
+			<newsfe:translate key="link.title" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="title" class="input-xlarge" id="relatedlink-title" errorClass="error" />
+			<p class="help-block"><f:translate key="link.title.help" /></p>
+		</div>
+    </div>
+    <div class="control-group">
+		<label class="control-label" for="relatedlink-description">
+			<newsfe:translate key="link.description" />
+		</label>
+		<div class="controls">
+			<f:form.textfield property="description" class="input-xlarge" id="relatedlink-description" errorClass="error" />
+			<p class="help-block"><f:translate key="link.description.help" /></p>
+		</div>
+    </div>
+</fieldset>

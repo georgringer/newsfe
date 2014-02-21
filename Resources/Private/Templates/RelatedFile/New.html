@@ -1,0 +1,16 @@
+<f:layout name="Default" />
+
+
+<f:section name="main">
+
+	<f:flashMessages />
+
+	<f:render partial="FormErrors" arguments="{table:'file'}"/>
+
+	<f:form action="create"  name="newRelatedFile" object="{newRelatedFile}" arguments="{news:news}"  class="form-horizontal">
+		<f:render partial="RelatedFile/FormFields" arguments="{news:news}"/>
+		<div class="form-actions">
+			<f:form.submit value="Create new"  class="btn btn-primary" />
+		</div>
+	</f:form>
+</f:section>

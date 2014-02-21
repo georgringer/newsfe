@@ -1,0 +1,14 @@
+plugin.tx_newsfe {
+	view {
+		# cat=plugin.tx_newsfe/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:newsfe/Resources/Private/Templates/
+		# cat=plugin.tx_newsfe/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:newsfe/Resources/Private/Partials/
+		# cat=plugin.tx_newsfe/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:newsfe/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_newsfe//a; type=int+; label=Default storage PID
+		storagePid = 
+	}
+}

@@ -1,0 +1,95 @@
+Title {news.title}
+
+<hr />
+<ul>
+	<li><f:link.action action="new" controller="RelatedLink" arguments="{news:news}">new related link</f:link.action></li>
+	<li><f:link.action action="new" controller="RelatedFile" arguments="{news:news}">new related file</f:link.action></li>
+</ul>
+<f:if condition="{news.media}">
+	<div class="pull-right" style="padding:2px;margin:2px;background: #ccc;">
+		<f:for each="{news.media}" as="media" iteration="iterator">
+			<div style="padding:4px;margin:4px;background:#fff;border:1px solid #eee">
+
+				<f:if condition="{media.image}">
+					<f:image src="uploads/tx_news/{media.image}" maxWidth="100" title="{media.title}" alt="{media.alt}" />
+				</f:if>
+				{media.caption}
+
+				<br />
+				<f:link.action controller="Media" action="edit" arguments="{news:news,media:media}">edit media element</f:link.action>
+
+				<div style="padding:2px 5px;margin:2px;background:#eee;font-weight:bold;">
+					<f:if condition="{iterator.isLast}">
+						<f:else>
+							<f:link.action onclick="return confirm('Wanna move it down?')" controller="Media" action="moveDown" arguments="{news:news,media:media}">&DoubleDownArrow;</f:link.action>
+						</f:else>
+					</f:if>
+					<f:if condition="{iterator.isFirst}">
+						<f:else>
+							<f:link.action onclick="return confirm('Wanna move it up?')" controller="Media" action="moveUp" arguments="{news:news,media:media}">&DoubleUpArrow;</f:link.action>
+						</f:else>
+					</f:if>
+					&middot;
+					<f:link.action onclick="return confirm('Wanna delete it?')" controller="Media" action="delete" arguments="{news:news,media:media}">Delete</f:link.action>
+				</div>
+			</div>
+		</f:for>
+	</div>
+</f:if>
+
+<f:if condition="{news.relatedLinks}">
+	<div class="pull-right" style="padding:2px;margin:2px;background: #ccc;">
+		<f:for each="{news.relatedLinks}" as="relatedLink" iteration="iterator">
+			<div style="padding:4px;margin:4px;background:#fff;border:1px solid #eee">
+
+				{relatedLink.title}
+
+				<br />
+				<f:link.action controller="RelatedLink" action="edit" arguments="{news:news,relatedLink:relatedLink}">edit link element</f:link.action>
+
+				<div style="padding:2px 5px;margin:2px;background:#eee;font-weight:bold;">
+					<f:if condition="{iterator.isLast}">
+						<f:else>
+							<f:link.action onclick="return confirm('Wanna move it down?')" controller="RelatedLink" action="moveDown" arguments="{news:news,relatedLink:relatedLink}">&DoubleDownArrow;</f:link.action>
+						</f:else>
+					</f:if>
+					<f:if condition="{iterator.isFirst}">
+						<f:else>
+							<f:link.action onclick="return confirm('Wanna move it up?')" controller="RelatedLink" action="moveUp" arguments="{news:news,relatedLink:relatedLink}">&DoubleUpArrow;</f:link.action>
+						</f:else>
+					</f:if>
+					&middot;
+					<f:link.action onclick="return confirm('Wanna delete it?')" controller="RelatedLink" action="delete" arguments="{news:news,relatedLink:relatedLink}">Delete</f:link.action>
+				</div>
+			</div>
+		</f:for>
+	</div>
+</f:if>
+<f:if condition="{news.relatedFiles}">
+	<div class="pull-right" style="padding:2px;margin:2px;background: #ccc;">
+		<f:for each="{news.relatedFiles}" as="relatedFile" iteration="iterator">
+			<div style="padding:4px;margin:4px;background:#fff;border:1px solid #eee">
+
+				{relatedFile.title}, {relatedFile.file}
+
+				<br />
+				<f:link.action controller="RelatedFile" action="edit" arguments="{news:news,relatedFile:relatedFile}">edit file element</f:link.action>
+
+				<div style="padding:2px 5px;margin:2px;background:#eee;font-weight:bold;">
+					<f:if condition="{iterator.isLast}">
+						<f:else>
+							<f:link.action onclick="return confirm('Wanna move it down?')" controller="RelatedFile" action="moveDown" arguments="{news:news,relatedFile:relatedFile}">&DoubleDownArrow;</f:link.action>
+						</f:else>
+					</f:if>
+					<f:if condition="{iterator.isFirst}">
+						<f:else>
+							<f:link.action onclick="return confirm('Wanna move it up?')" controller="RelatedFile" action="moveUp" arguments="{news:news,relatedFile:relatedFile}">&DoubleUpArrow;</f:link.action>
+						</f:else>
+					</f:if>
+					&middot;
+					<f:link.action onclick="return confirm('Wanna delete it?')" controller="RelatedFile" action="delete" arguments="{news:news,relatedFile:relatedFile}">Delete</f:link.action>
+				</div>
+			</div>
+		</f:for>
+	</div>
+</f:if>

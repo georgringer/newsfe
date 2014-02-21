@@ -1,0 +1,41 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+	<f:flashMessages />
+
+	<f:if condition="{access}">
+		<f:then>
+			<div class="pull-right" style="padding:2px;margin:2px;background: #ccc;">
+				<f:if condition="{news.media}">
+					<f:for each="{news.media}" as="media">
+						<div style="padding:4px;margin:4px;background:#fff;border:1px solid #eee">
+							{media.caption}
+
+							<br />
+							<f:link.action controller="Media" action="edit" arguments="{news:news,media:media}">edit media element</f:link.action>
+						</div>
+					</f:for>
+				</f:if>
+				<br />
+				<f:link.action action="new" controller="Media" arguments="{news:news}">new media</f:link.action>
+			</div>
+
+			<f:render partial="FormErrors" arguments="{table:'news'}"/>
+
+			<f:form action="update" name="news" object="{news}" class="form-horizontal">
+				<!-- as preview action: preview -->
+				<f:render partial="News/FormFields" arguments="{news:news,availablecategories:availablecategories}" />
+				<div class="form-actions">
+					<f:form.submit value="Save"  class="btn btn-primary" />
+				</div>
+			</f:form>
+
+			<f:link.action action="show" arguments="{news:news}">custom single view</f:link.action>
+		</f:then>
+		<f:else>
+			no edit rights
+		</f:else>
+	</f:if>
+
+
+</f:section>

@@ -1,0 +1,30 @@
+plugin.tx_newsfe {
+	view {
+		templateRootPath = {$plugin.tx_newsfe.view.templateRootPath}
+		partialRootPath = {$plugin.tx_newsfe.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_newsfe.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = 289
+		xclasses {
+
+			Tx_Newsfe_Domain_Model_News {
+				mapping {
+					tableName = tx_news_domain_model_news
+				}
+			}
+		}
+	}
+}
+
+config.tx_extbase {
+	persistence{
+		classes {
+			Tx_Newsfe_Domain_Model_News {
+				mapping {
+					tableName = tx_news_domain_model_news
+				}
+			}
+		}
+	}
+}

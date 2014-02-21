@@ -1,0 +1,24 @@
+{namespace newsfe=Tx_Newsfe_ViewHelpers}
+
+<f:form.errors>
+	<div class="alert alert-error">
+		<h4 class="alert-heading"><f:translate key="validation.header" /></h4>
+		<f:if condition="{error.propertyName}">
+			<f:for each="{error.errors}" as="errorDetail">
+				<p>
+					<strong>
+						<f:translate key="validation.property.header" arguments="{0:'{newsfe:label(table:table, field:errorDetail.propertyName, default: errorDetail.propertyName)}' }" />:
+					</strong>
+
+					<f:if condition="{errorDetail.errors}">
+						<ul>
+							<f:for each="{errorDetail.errors}" as="detailError">
+								<li>{detailError.message}</li>
+							</f:for>
+						</ul>
+					</f:if>
+				</p>
+			</f:for>
+		</f:if>
+	</div>
+</f:form.errors>
